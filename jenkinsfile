@@ -1,0 +1,9 @@
+stage('Push Image') {
+    steps {
+        script {
+            docker.withRegistry('https://docker.io', 'docker-hub-credentials-id') {
+                dockerImage.push("latest")
+            }
+        }
+    }
+}
